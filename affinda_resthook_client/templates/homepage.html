@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Xin chào!</h1>
+  <h2>Webhook received:</h2>
+  <ul>
+    {% for webhook in webhooks %}
+    <li>
+      <strong>Event:</strong> {{ webhook.event }},
+      <strong>timestamp:</strong> {{ webhook.timestamp }},
+      <strong>payload:</strong> {{ webhook.payload|truncatechars:100 }}</li>
+    {% empty %}
+    <li>Nothing yet</li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
