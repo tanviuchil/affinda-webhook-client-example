@@ -65,3 +65,12 @@ If the URL provided by ngrok is `https://<some-ngrok-url>`
 Then the URL to use as `targetUrl` is `https://<some-ngrok-url>/receive/`
 
 Now you should be ready to start receiving webhooks.
+
+
+## URL Not accessible - Allowed Host error 
+Go to `affinda_resthook_client/settings.py` and update the ALLOWED_HOSTS to have the ngrok domain example ALLOWED_HOSTS = ['.ngrok-free.app', '127.0.0.1']
+
+## full event response 
+Go to `affinda_resthook_client/templates/homepage.html` and update the payload and remove the following details `|truncatechars:100` .
+
+
